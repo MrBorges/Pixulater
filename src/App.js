@@ -1,13 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
+import api_keys from './api_keys';
 
 function App() {
+
+  console.log(api_keys.omdb);
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          {api_keys.omdb}
         </p>
         <a
           className="App-link"
