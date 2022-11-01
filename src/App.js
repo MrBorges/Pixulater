@@ -1,27 +1,32 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
-import api_keys from './api_keys';
+import InsertFoodComponent from './Components/InsertFoodComponent/InsertFoodComponent';
+import FoodListComponent from './Components/FoodListComponent/FoodListComponent';
 
 function App() {
 
-  console.log(api_keys.omdb);
+  const [foodList, setFoodList] = useState([]);
+  const [foodName, setFoodName] = useState('');
+
+  let nextFoodId = 0;
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          {api_keys.omdb}
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <FoodListComponent foodList={foodList}/> 
+      <InsertFoodComponent 
+        setFoodList={setFoodList}
+        setFoodName={setFoodName}
+        nextFoodId={nextFoodId}
+        foodName={foodName}
+        foodList={foodList}
+      />      
+      {
+        /* 
+          
+          <ImageSearchComponent/>
+          <NextStageButton/>
+        */
+      }
     </div>
   );
 }
