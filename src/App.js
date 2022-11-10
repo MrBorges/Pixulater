@@ -7,9 +7,11 @@ function App() {
 
   const [foodList, setFoodList] = useState([]);
   const [foodName, setFoodName] = useState('');
-  const [foodDescription, setFoodDescription] = useState('');
+  const [foodDescription, setFoodDescription] = useState('');  
+  const [foodId, setFoodId] = useState(0);
+  //let nextFoodId = 0;
 
-  let nextFoodId = 0;
+  
 
   return (
     <div className="App container-md">
@@ -17,7 +19,8 @@ function App() {
       <InsertFoodComponent 
         setFoodList={setFoodList}
         setFoodName={setFoodName}
-        nextFoodId={nextFoodId}
+        foodId={foodId}
+        setFoodId = {setFoodId}
         foodName={foodName}
         foodList={foodList}
         foodDescription = {foodDescription}

@@ -5,7 +5,7 @@ const FoodListComponent = ({foodList}) =>{
         <div>
             <ul className="list-group mt-2 ">
                 {foodList.map(foodListItem =>(
-                    <li key={foodListItem.foodId} className="list-group-item fs-4 fw-semibold">{foodListItem.foodName}</li>
+                    <li key={foodListItem.foodId} className="list-group-item fs-4 fw-semibold">{foodListItem.foodId + foodListItem.foodName + foodListItem.foodDescription}</li>
                 ))}
             </ul>
         </div>
